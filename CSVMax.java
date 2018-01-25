@@ -2,7 +2,7 @@ import edu.duke.*;
 import org.apache.commons.csv.*;
 import java.io.*;
 /**
- * Write a description of CSVMax here.
+ * A few CSV methods to get out weather data from several files.
  * 
  * @author Davide Nastri
  * @version 1/23/2017
@@ -11,15 +11,7 @@ public class CSVMax {
     public CSVRecord hottestHourInFile(CSVParser parser) {
     CSVRecord largestSoFar = null;
     for (CSVRecord currentRow : parser) {
-            if (largestSoFar == null) {
-                largestSoFar = currentRow;
-            } else {
-                double currentTemp = Double.parseDouble(currentRow.get("TemperatureF"));
-                double largestTemp = Double.parseDouble(largestSoFar.get("TemperatureF"));
-                if (currentTemp > largestTemp) {
-                    largestSoFar = currentRow;
-                }
-            }
+        largestSoFar = getLargestOfTwo(currentRow, largestSoFar);
         }
     return largestSoFar;
     }
@@ -34,7 +26,17 @@ public class CSVMax {
         for (File f : dr.selectedFiles()) {
             FileResource fr = new FileResource(f);
             CSVRecord currentRow = hottestHourInFile(fr.getCSVParser());
-            if (largestSoFar == null) {
+            largestSoFar = getLargestOfTwo(currentRow, largestSoFar);
+        }
+        return largestSoFar;
+    }
+    public void testHottestInManyDays(){
+        CSVRecord largest = hottestInManyDays();
+        System.out.println("Hottest temperature was " + largest.get("TemperatureF") + " at " + largest.get("TimeEST"));
+    }
+
+    public CSVRecord getLargestOfTwo(CSVRecord currentRow, CSVRecord largestSoFar) {
+        if (largestSoFar == null) {
                 largestSoFar = currentRow;
             } else {
                 double currentTemp = Double.parseDouble(currentRow.get("TemperatureF"));
@@ -43,11 +45,10 @@ public class CSVMax {
                     largestSoFar = currentRow;
                 }
             }
-        }
         return largestSoFar;
     }
-    public void testHottestInManyDays(){
-        CSVRecord largest = hottestInManyDays();
-        System.out.println("Hottest temperature was " + largest.get("TemperatureF") + " at " + largest.get("TimeEST"));
-    }
 }
+
+
+
+
