@@ -1,19 +1,16 @@
 # Java CSV wrangling
-> This repo contains how to manually install the key components of CloudPebble as submodules into a Vagrant Linux VM. It also contains a `docker-compose` file that will assemble all of them into something that runs like a real CloudPebble instance. A big thank you from me and the whole Pebble community to the *awesome* Katharine Berry - (<https://twitter.com/KatharineBerry>) for making this possible.  
-
-## Limitations
-
-- Pebble SSO is not available; only local accounts work.
-- Websocket installs are not available because pebble SSO is not available
+> This repo contains a few examples of how to manipulate a CSV file using Java.  
 
 ## Prerequisites
 
-- Oracle VirtualBox (how to install: https://www.virtualbox.org/wiki/Downloads)
-- Vagrant (how to install: https://www.vagrantup.com/intro/getting-started/install.html)
+- Download and install BlueJ Java Environment (http://www.dukelearntoprogram.com/downloads/bluej.php?course=2)
+- Download test CSV data (http://www.dukelearntoprogram.com/course2/files.php)
 
 ## How to use
 
-Point your web browser to http://localhost
+- Clone this repo locally
+- Put the downloaded test CSV data in the same folder
+- Open the project file with BlueJ
 
 ## Release History
 
@@ -30,7 +27,7 @@ Distributed under the GPL license. See ``LICENSE`` for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/ltpitt/vagrant-cloudpebble-composed/fork>)
+1. Fork it (<https://github.com/ltpitt/java-csv-wrangling/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
