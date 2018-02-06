@@ -4,12 +4,10 @@
 ## Prerequisites
 
 - Download and install BlueJ Java Environment (http://www.dukelearntoprogram.com/downloads/bluej.php?course=2)
-- Download test CSV data (http://www.dukelearntoprogram.com/course2/files.php)
 
 ## How to use
 
 - Clone this repo locally
-- Put the downloaded test CSV data in the same folder
 - Open the project file with BlueJ
 
 ## Release History
